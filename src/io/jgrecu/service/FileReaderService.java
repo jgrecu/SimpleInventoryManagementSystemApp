@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FileReaderService {
     private static FileReaderService instance;
@@ -30,7 +29,11 @@ public class FileReaderService {
             allLines.stream()
                     .skip(1)
                     .map(line -> line.split(","))
-                    .map(line -> new Product(Integer.parseInt(line[0]), line[1], Integer.parseInt(line[2]), Integer.parseInt(line[3])))
+                    .map(line -> new Product(
+                            Integer.parseInt(line[0]),
+                            line[1], Integer.parseInt(line[2]),
+                            Double.parseDouble(line[3])
+                    ))
                     .forEach(products::add);
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
