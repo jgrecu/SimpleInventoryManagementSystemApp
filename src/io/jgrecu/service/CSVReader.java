@@ -8,15 +8,15 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileReaderService {
-    private static FileReaderService instance;
+public class CSVReader {
+    private static CSVReader instance;
 
-    private FileReaderService() {
+    private CSVReader() {
     }
 
-    public static FileReaderService getInstance() {
+    public static CSVReader getInstance() {
         if (instance == null) {
-            instance = new FileReaderService();
+            instance = new CSVReader();
         }
         return instance;
     }
