@@ -21,8 +21,8 @@ public class FileReaderService {
         return instance;
     }
 
-    public List<Product> readProductsFromFile(String fileName) {
-        List<Product> products = new ArrayList<>();
+    public ArrayList<Product> readProductsFromFile(String fileName) {
+        ArrayList<Product> products = new ArrayList<>();
         Path filePath = Path.of(fileName);
         try {
             List<String> allLines = Files.readAllLines(filePath);
@@ -38,7 +38,7 @@ public class FileReaderService {
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
             e.printStackTrace();
-            return List.of();
+            return new ArrayList<>();
         }
         return products;
     }
