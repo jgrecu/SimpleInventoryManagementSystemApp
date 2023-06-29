@@ -24,8 +24,8 @@ public class ReportGenerator {
                                 (product.getPrice() >= 101 && product.getQuantity() < 10)
                 )
                 .forEach(product -> System.out.println("id=" + product.getId() +
-                        ", name=\'" + product.getName() +
-                        "\', quantity=" + product.getQuantity() +
+                        ", name='" + product.getName() +
+                        "', quantity=" + product.getQuantity() +
                         ", needs to be reordered!"));
     }
 }
